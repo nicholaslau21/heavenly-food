@@ -1,0 +1,15 @@
+.loadingSpinner {
+  text-align: center;
+}
+
+.showMore {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.showMore button {
+  margin: 20px 0;
+  padding: 15px 30px;
+  border-radius: 10px;
+  background-color: transparent;
+}

@@ -1,0 +1,39 @@
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.food-list__item {
+  max-width: 100%;
+  flex: 0 0 400px;
+}
+
+@media (min-width: 360px) {
+  .food-list {
+    justify-content: center;
+  }
+
+  .food-list__item {
+    flex: 0 0 300px;
+  }
+}
+
+@media (min-width: 760px) {
+  .food-list {
+    justify-content: center;
+  }
+
+  .food-list__item {
+    flex: 0 0 300px;
+  }
+}
+
+@media (min-width: 965px) {
+  .food-list {
+    justify-content: left;
+  }
+
+  .food-list__item {
+    flex: 0 0 400px;
+  }
+}
