@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useSearchParams } from 'react-router-dom';
 import FoodList from '../components/food/FoodList';
 import NoFoodFound from '../components/food/NoFoodFound';
 import Button from '../components/UI/Button';
@@ -15,7 +15,7 @@ const AllFood = () => {
   const { categoryId } = useParams();
   const [page, setPage] = useState(1);
   const { search } = useLocation();
-  const queryParams = useMemo(() => new URLSearchParams(search), [search]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const {
     sendRequest,
@@ -60,9 +60,9 @@ const AllFood = () => {
       ? loadedFoodList.filter((food) => food.categoryId === categoryId)
       : loadedFoodList;
 
-  if (queryParams && queryParams.get('foodName')) {
+  if (searchParams.has('foodName')) {
     filteredFoodList = filteredFoodList.filter(
-      (food) => food.name.toLowerCase().includes(queryParams.get('foodName').toLowerCase())
+      (food) => food.name.toLowerCase().includes(searchParams.get('foodName').toLowerCase())
     );
   }
 
